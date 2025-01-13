@@ -12,7 +12,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Background stays behind */
+    z-index: 0;
     overflow: hidden;
 }
 
@@ -27,48 +27,49 @@ body {
     flex-direction: column;
     min-height: 100vh;
     position: relative;
-    z-index: 2; /* Content stays above */
+    z-index: 2;
+    padding: 20px;
 }
 
 .header {
     text-align: center;
-    padding: 20px;
+    padding: 20px 0;
 }
 
 .logo-img {
-    width: 150px;
+    width: 120px;
     height: auto;
     margin-bottom: 10px;
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #00ff99;
-    margin-bottom: 5px;
 }
 
 .tagline {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #aaa;
 }
 
 .nav {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    padding: 20px 0;
+    gap: 15px;
+    flex-wrap: wrap; /* Make buttons wrap for small screens */
+    padding: 15px 0;
 }
 
 .nav .btn {
     background-color: transparent;
     border: 2px solid #00ff99;
-    padding: 12px 25px;
-    text-transform: uppercase;
-    font-size: 1rem;
-    color: #f1f1f1;
+    padding: 10px 15px;
+    font-size: 1.1rem;
     text-decoration: none;
+    color: #f1f1f1;
     border-radius: 5px;
     transition: background-color 0.3s ease-in-out;
+    text-transform: uppercase;
 }
 
 .nav .btn:hover {
@@ -82,13 +83,13 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 50px;
+    padding: 30px;
 }
 
 .grid-section {
     display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
+    gap: 15px;
+    flex-wrap: wrap; /* Ensure cards stack vertically on small screens */
     justify-content: center;
     width: 100%;
 }
@@ -97,31 +98,30 @@ body {
     background-color: #101010;
     border: 1px solid #00ff99;
     border-radius: 8px;
-    padding: 30px;
-    width: 30%;
-    min-width: 250px;
-    max-width: 400px;
+    padding: 20px;
+    width: 100%;
+    max-width: 320px; /* Prevent cards from stretching too wide */
     text-align: center;
     color: #fff;
 }
 
 .info-card h3 {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: #00ff99;
 }
 
 .info-card p {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .info-btn {
     background-color: #00ff99;
     color: #0a0a0a;
-    border: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     font-size: 1rem;
-    cursor: pointer;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -130,7 +130,7 @@ body {
 }
 
 .connect-wallet {
-    padding: 15px 40px;
+    padding: 10px 30px;
     border: 2px solid #00ff99;
     background-color: transparent;
     color: #00ff99;
@@ -147,7 +147,7 @@ body {
 
 .footer {
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     background-color: #0a0a0a;
     border-top: 1px solid #333;
     color: #999;
@@ -155,4 +155,71 @@ body {
 
 .footer p {
     margin: 0;
+}
+
+/* Media Queries for Responsive Design */
+
+/* For tablets and small laptops */
+@media (max-width: 768px) {
+    .logo-img {
+        width: 100px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+
+    .info-card {
+        padding: 15px;
+    }
+
+    .info-btn {
+        padding: 8px 12px;
+        font-size: 1rem;
+    }
+
+    .connect-wallet {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    .logo-img {
+        width: 80px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .tagline {
+        font-size: 0.8rem;
+    }
+
+    .nav .btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .info-card {
+        width: 100%; /* Full width on mobile */
+        padding: 10px;
+    }
+
+    .info-btn {
+        font-size: 0.9rem;
+    }
+
+    .connect-wallet {
+        margin-bottom: 15px;
+        padding: 8px 15px;
+        font-size: 1.2rem;
+    }
 }
