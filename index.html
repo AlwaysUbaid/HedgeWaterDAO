@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hedgewater Fund - Management Console</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="desktop">
+        <div class="desktop-icon" data-window="dashboard">
+            <img src="/api/placeholder/32/32" alt="Dashboard Icon" class="icon-img">
+            <span class="icon-text">Dashboard</span>
+        </div>
+        <div class="desktop-icon" data-window="about">
+            <img src="about.png" alt="About Icon" class="icon-img">
+            <span class="icon-text">About</span>
+        </div>
+        <div class="desktop-icon" data-window="vision">
+            <img src="vision.png" alt="Vision Icon" class="icon-img">
+            <span class="icon-text">Our Vision</span>
+        </div>
+        <div class="desktop-icon" data-window="portfolio">
+            <img src="portfolio.png" alt="Portfolio Icon" class="icon-img">
+            <span class="icon-text">Portfolio</span>
+        </div>
+        <div class="desktop-icon" data-window="recycle">
+            <img src="bin.png" alt="Recycle Bin" class="icon-img">
+            <span class="icon-text">Recycle Bin</span>
+        </div>
+    </div>
+
+    <div class="taskbar">
+        <div class="start-button">
+            <img src="/api/placeholder/20/20" alt="Start" class="win-logo">
+            Start
+        </div>
+        <div class="time">9:49 AM</div>
+    </div>
+
+    <div class="window">
+        <div class="window-header">
+            <div class="title-bar">
+                <img src="/api/placeholder/16/16" alt="Icon" class="window-icon">
+                Hedgewater Fund Dashboard
+                <div class="window-controls">
+                    <button class="minimize">_</button>
+                    <button class="maximize">□</button>
+                    <button class="close">×</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="window-content">
+            <div class="metrics-bar">
+                <div class="metric">
+                    <span class="metric-label">Total AUM:</span>
+                    <span class="metric-value">$125.7M</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Total Assets:</span>
+                    <span class="metric-value">47</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">YTD ROI:</span>
+                    <span class="metric-value positive">+18.5%</span>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="grid-item funds-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fund Name</th>
+                                <th>MTD</th>
+                                <th>YTD</th>
+                                <th>LTD</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Genesis I</td>
+                                <td class="negative">-1.35%</td>
+                                <td class="negative">-1.35%</td>
+                                <td class="positive">+7.29%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="grid-item performance-chart">
+                    <h3>Returns Since Inception</h3>
+                    <canvas id="performanceChart"></canvas>
+                </div>
+
+                <div class="grid-item status-panel">
+                    <div class="status-item">
+                        <span>ARM Rate:</span>
+                        <span>00.00%</span>
+                    </div>
+                    <div class="status-item">
+                        <span>Fixed Rate:</span>
+                        <span>00.00%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <div class="status-text">Ready</div>
+            <div class="status-info">Last updated: 1/22/2025, 9:49:06 AM</div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
