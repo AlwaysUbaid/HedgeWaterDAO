@@ -1,0 +1,399 @@
+/* Windows 7 Theme Styles */
+/* Desktop Icons */
+.desktop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 80px);
+    grid-auto-rows: 100px;
+    gap: 20px;
+    align-content: start;
+    pointer-events: none;
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid transparent;
+    pointer-events: all;
+}
+
+.desktop-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.desktop-icon.selected {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.icon-img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+.icon-win {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.icon-text {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-size: 12px;
+    max-width: 70px;
+    overflow-wrap: break-word;
+}
+
+/* Window Styles */
+.window {
+    position: absolute;
+    min-width: 400px;
+    min-height: 300px;
+    width: 800px;  /* Default width */
+    height: 600px; /* Default height */
+    background: var(--win7-window-bg);
+    border: 1px solid var(--win7-border);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    resize: both;
+    overflow: hidden; /* Change from auto to hidden */
+}
+
+:root {
+    --win7-blue: #0078D7;
+    --win7-border: #AFB4B8;
+    --win7-gradient-start: #F0F0F0;
+    --win7-gradient-end: #E1E1E1;
+    --win7-text: #000000;
+    --win7-window-bg: #FFFFFF;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #001E36 url('background.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--win7-text);
+    overflow: hidden;
+    height: 100vh;
+}
+.start-menu {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    width: 280px;
+    background: linear-gradient(to bottom, #ffffff, #f2f2f2);
+    border: 1px solid #999;
+    border-bottom: none;
+    box-shadow: 2px -2px 5px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 10000;
+}
+
+.start-menu-content {
+    padding: 5px 0;
+}
+
+.start-menu-item {
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.start-menu-item:hover {
+    background: linear-gradient(to right, #225bab, #4d90fe);
+    color: white;
+}
+
+.start-menu-item img {
+    width: 24px;
+    height: 24px;
+}
+
+.start-menu.active {
+    display: block;
+}
+
+/* Taskbar Styles */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(to bottom, #225bab, #194380);
+    border-top: 1px solid var(--win7-border);
+    display: flex;
+    align-items: center;
+    padding: 0;
+    z-index: 9999;
+}
+
+.start-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    height: 100%;
+    margin: 0 2px;
+    background: linear-gradient(to bottom, #439131, #158914);
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.start-button:hover {
+    background: linear-gradient(to bottom, #217e18, #189707);
+}
+
+.taskbar-buttons {
+    flex: 1;
+    display: flex;
+    gap: 4px;
+    padding: 0 4px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.time {
+    color: white;
+    padding: 0 16px;
+    font-size: 14px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    margin-left: auto;
+}
+
+.taskbar-button {
+    height: 32px;
+    min-width: 160px;
+    max-width: 200px;
+    padding: 0 8px;
+    background: linear-gradient(to bottom, #225bab, #194380);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.taskbar-button:hover {
+    background: linear-gradient(to bottom, #407ccc, #1958a7);
+}
+
+.taskbar-button.active {
+    background: linear-gradient(to bottom, #4d8ad5, #1e62b3);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.start-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0px 20px;
+    background: linear-gradient(to bottom, #198420, #2cb131);
+    border: 1px solid var(--win7-border);
+    border-radius: 0px 20px 20px 0px;
+    cursor: pointer;
+}
+
+.time {
+    padding: 5px 10px;
+    border-left: 1px solid var(--win7-border);
+}
+
+/* Window Styles */
+.window {
+    position: absolute;
+    min-width: 400px;
+    min-height: 300px;
+    width: 800px;  /* Default width */
+    height: 600px; /* Default height */
+    background: var(--win7-window-bg);
+    border: 1px solid var(--win7-border);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    resize: both;
+    overflow: hidden; /* Change from auto to hidden */
+}
+
+.window-header {
+    background: linear-gradient(to bottom, var(--win7-gradient-start), var(--win7-gradient-end));
+    padding: 5px;
+    border-bottom: 1px solid var(--win7-border);
+}
+
+.title-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+}
+
+.window-controls {
+    display: flex;
+    gap: 2px;
+    margin-left: auto;
+}
+
+.window-controls button {
+    width: 45px;
+    height: 25px;
+    border: 1px solid #999;
+    background: linear-gradient(to bottom, #f3f3f3, #e5e5e5);
+    cursor: pointer;
+    color: #333;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 4px;
+}
+
+.window-controls .minimize {
+    font-size: 14px;
+}
+
+.window-controls .maximize {
+    font-size: 12px;
+}
+
+.window-controls .close {
+    font-size: 20px;
+}
+
+.window-controls button:hover {
+    background: linear-gradient(to bottom, #e5e5e5, #d9d9d9);
+}
+
+.window-controls .close:hover {
+    background: #e81123;
+    color: white;
+}
+
+.window-header {
+    background: linear-gradient(to bottom, #ffffff, #f2f2f2);
+    padding: 3px;
+    border-bottom: 1px solid #ccc;
+}
+
+.title-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    font-size: 12px;
+    user-select: none;
+}
+
+/* Content Styles */
+.window-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.metrics-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background: #F5F5F5;
+    padding: 10px;
+    border: 1px solid var(--win7-border);
+}
+
+.metric {
+    text-align: center;
+}
+
+.metric-value {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    background: white;
+    border: 1px solid var(--win7-border);
+    padding: 15px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid var(--win7-border);
+    text-align: left;
+}
+
+th {
+    background: linear-gradient(to bottom, var(--win7-gradient-start), var(--win7-gradient-end));
+}
+
+/* Status Bar */
+.status-bar {
+    height: 25px;
+    background: linear-gradient(to bottom, var(--win7-gradient-start), var(--win7-gradient-end));
+    border-top: 1px solid var(--win7-border);
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+/* Utility Classes */
+.positive { color: green; }
+.negative { color: red; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .window {
+        width: 95%;
+        height: 90vh;
+    }
+    
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
