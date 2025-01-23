@@ -87,7 +87,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #001E36 url('background.webp') no-repeat center center fixed;
+    background: #001E36 url('background.png') no-repeat center center fixed;
     background-size: cover;
     color: var(--win7-text);
     overflow: hidden;
